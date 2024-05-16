@@ -9,14 +9,21 @@ namespace Prueba_1___Prog5.Controllers
         //    {
         //        return View();
         //    }
-        public string Index()
-        { 
-            return "This is my default action...";
-        }
-        
-        public string Welcome(string name, int ID = 1)
+        public IActionResult Index()
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+            return View();
+        }
+
+
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+
+            return View();
         }
     }
 }
+
+    
