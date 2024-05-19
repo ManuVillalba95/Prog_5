@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Prueba_1___Prog5.Data;
 using Prueba_1___Prog5.Models;
 using System.Diagnostics;
 
@@ -15,6 +16,8 @@ namespace Prueba_1___Prog5.Controllers
 
         public IActionResult Index()
         {
+            DA_Movie dA_Movie = new DA_Movie();
+            var dt = dA_Movie.Obtener();
             return View();
         }
 
